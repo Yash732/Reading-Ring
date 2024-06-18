@@ -5,7 +5,7 @@
 {% block content %}
 <h1 class = "mb-6 text-3xl"> {{ title }}</h1>
 {% comment %} enctype is required to upload image files {% endcomment %}
-<form type = 'post' action ='.' enctype = 'multipart/form-data'>  
+<form method = 'post' action ='.' enctype = 'multipart/form-data'>  
     {% csrf_token %}
 
     <div class = "space-y-4">
@@ -19,8 +19,10 @@
             {% endfor %}
 
             {{ form.non_field_errors}}
+        </div>
     {% endif %}
-    <button class = "mt-6 text-lg px-8 py-4 mb-6 rounded-xl bg-teal-500 hover:bg-teal-700 text-semibold text-white">Submiit</button>
+    <button class = "mt-6 text-lg px-8 py-4 mb-6 rounded-xl bg-teal-500 hover:bg-teal-700 text-semibold text-white">Submit</button>
 </form>
 
 {% endblock %}
+

@@ -9,6 +9,11 @@ app_name = 'item'
 #pk (integer) has to be same as set in views.py of item folder
 #next Step: import this file in main urls.py
 urlpatterns = [
+    path('',views.items,name = 'items'),
+    path('new/', views.new, name = 'new'),
     path('<int:pk>/',views.detail, name = 'detail'),
-    path('jew/', views.new, name = 'new'),
+    path('<int:pk>/delete/',views.delete, name = 'delete'),
+    path('<int:pk>/edit/',views.edit, name = 'edit'),
+
+    
 ]

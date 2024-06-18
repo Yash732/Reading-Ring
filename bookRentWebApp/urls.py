@@ -24,6 +24,8 @@ from django.urls import path, include
 urlpatterns = [
     path('',include('core.urls')), # path is blank as we want the front page to open
     path('items/', include('item.urls')), # all urls that contain items/ will automatically goto item urls.py
+    path('dashboard/', include('dashboard.urls')),
+    path('inbox/',include('conversation.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 #the above code helps to display images while developing a website (not to be used in production)
